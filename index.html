@@ -1,47 +1,61 @@
-<div id="login-modal">
-    <div class="modal-box">
-        <h2>Meal Finder Login</h2>
-        <input type="text" id="username-input" placeholder="Your Name">
-        <button id="login-btn">Start Cooking</button>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RecipeFinder</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+
+    <div id="login-modal">
+        <div class="modal-box">
+            <h2>Meal Finder Login</h2>
+            <input type="text" id="username-input" placeholder="Your Name">
+            <button id="login-btn">Start Cooking</button>
+        </div>
     </div>
-</div>
 
-<div class="container" id="app-container" style="display: none;">
-    
-    <aside id="sidebar">
-        <h1 id="logo">RecipeFinder</h1>
-        <p id="welcome-message"></p>
-        <button id="logout-btn">Log Out</button>
+    <div class="container" id="app-container" style="display: none;">
+        
+        <aside id="sidebar">
+            <h1 id="logo">RecipeFinder</h1>
+            <p id="welcome-message"></p>
+            <button id="logout-btn">Log Out</button>
 
-        <div class="search-section">
-            <label for="meal-category">Choose a Category:</label>
-            <select id="meal-category">
-                <option value="">Loading categories...</option>
-            </select>
-            <button id="find-meal-btn">Get Random Meal</button>
-        </div>
-
-        <div class="favorites-wrapper">
-            <h3>Saved Recipes</h3>
-            <ul id="favorites-list">
-                <li class="empty-state">No favorites yet.</li>
-            </ul>
-        </div>
-    </aside>
-
-    <main id="recipe-display">
-        <div id="recipe-card">
-            <div class="recipe-header">
-                <h2 id="recipe-title">Select a category to begin</h2>
-                <button id="fav-btn">Add to Favs</button>
+            <div class="search-section">
+                <label for="meal-category">Choose a Category:</label>
+                <select id="meal-category">
+                    <option value="">Loading categories...</option>
+                </select>
+                <button id="find-meal-btn">Get Random Meal</button>
             </div>
-            <img id="recipe-img" src="" alt="">
-            <div id="recipe-info">
-                <h3>Ingredients</h3>
-                <ul id="ingredients-list"></ul>
-                <h3>Instructions</h3>
-                <p id="instructions-text"></p>
+
+            <div class="favorites-wrapper">
+                <h3>Saved Recipes</h3>
+                <ul id="favorites-list">
+                    <li class="empty-state">No favorites yet.</li>
+                </ul>
             </div>
-        </div>
-    </main>
-</div>
+        </aside>
+
+        <main id="recipe-display">
+            <div id="recipe-card">
+                <div class="recipe-header">
+                    <h2 id="recipe-title">Select a category to begin</h2>
+                    <button id="fav-btn">Add to Favs</button>
+                </div>
+                <img id="recipe-img" src="" alt="">
+                <div id="recipe-info">
+                    <h3>Ingredients</h3>
+                    <ul id="ingredients-list"></ul>
+                    <h3>Instructions</h3>
+                    <p id="instructions-text"></p>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="index.js"></script>
+</body>
+</html>
