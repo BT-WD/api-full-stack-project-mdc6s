@@ -71,3 +71,90 @@ main {
     background-color: #f0f0f0;
     margin: 20px 0;
 }
+/* Sidebar Decorations */
+aside {
+    background-color: #faf9f6;
+}
+
+#logo {
+    color: #ff6f00;
+    font-size: 1.6rem;
+    font-weight: 700;
+}
+
+/* Button & Element Styling */
+button {
+    padding: 12px;
+    border-radius: 6px;
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.2s ease;
+}
+
+#find-meal-btn {
+    background-color: #ff914d;
+    color: white;
+    width: 100%;
+    margin-top: 5px;
+}
+
+#find-meal-btn:hover {
+    background-color: #e67e3a;
+}
+
+#logout-btn {
+    background: none;
+    color: #e53e3e;
+    font-size: 0.85rem;
+    padding: 0;
+    text-align: left;
+    text-decoration: underline;
+}
+
+.search-section, .favorites-wrapper {
+    background: white;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.03);
+    border: 1px solid #f0f0f0;
+}
+
+select#meal-category {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #cbd5e0;
+    margin-top: 5px;
+}
+
+/* Recipe Card Styling */
+#recipe-card {
+    border: 1px solid #eee;
+    border-radius: 12px;
+    padding: 30px;
+    background: white;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.02);
+}
+
+.recipe-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+#fav-btn {
+    background: none;
+    color: #a0aec0;
+    font-size: 1.4rem;
+}
+
+#fav-btn:hover, #fav-btn.active {
+    color: #e53e3e;
+}
+
+#recipe-img {
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
