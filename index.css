@@ -7,7 +7,7 @@
 }
 
 body {
-    background-color: #fdfaf6;
+    background-color: #708090;
     display: flex;
     justify-content: center;
     align-items: flex-start;
@@ -77,7 +77,7 @@ main {
 }
 
 #logo {
-    color: #ff6f00;
+    color: #ffa600f8;
     font-size: 1.6rem;
     font-weight: 700;
 }
@@ -97,7 +97,7 @@ button:active {
 }
 
 #find-meal-btn {
-    background-color: #ff914d;
+    background-color: #45c234;
     color: white;
     width: 100%;
     margin-top: 15px;
@@ -108,14 +108,14 @@ button:active {
 }
 
 #login-btn {
-    background-color: #ff914d;
+    background-color: #be4dff;
     color: white;
     width: 100%;
 }
 
 #logout-btn {
     background: none;
-    color: #e53e3e;
+    color: #830202;
     font-size: 0.85rem;
     padding: 0;
     text-align: left;
