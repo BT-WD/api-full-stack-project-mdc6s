@@ -79,18 +79,18 @@ async function fetchCategories() {
 fetchCategories();
 
 // Function to fetch a random meal from the API
+// Updated findMealBtn Event Listener
 findMealBtn.addEventListener('click', async () => {
     try {
         const response = await fetch('https://www.themealdb.com/api/json/v1/1/random.php');
         const data = await response.json();
         const meal = data.meals[0];
         
-        // Store the meal data globally so we can display/save it later
+        // Store the meal data globally and display it directly
         window.currentFetchedMeal = meal;
-        console.log("Meal successfully fetched:", meal.strMeal);
+        displayMeal(meal);
         
-        // Let user know it was fetched successfully
-        alert(`Fetched: ${meal.strMeal}`);
+        console.log("Meal successfully fetched:", meal.strMeal);
     } catch (error) {
         console.error("Error fetching meal data:", error);
         alert("Failed to fetch meal. Check console for details.");
