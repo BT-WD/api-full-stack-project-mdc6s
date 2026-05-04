@@ -96,3 +96,42 @@ findMealBtn.addEventListener('click', async () => {
         alert("Failed to fetch meal. Check console for details.");
     }
 });
+// Render Fetched Data to the UI
+const recipeImg = document.getElementById('recipe-img');
+const ingredientsList = document.getElementById('ingredients-list');
+const instructionsText = document.getElementById('instructions-text');
+
+// Function to display the meal data on screen
+function displayMeal(meal) {
+    if (!meal) return;
+
+    // 1. Update Title and Image
+    recipeTitle.textContent = meal.strMeal;
+    recipeImg.src = meal.strMealThumb;
+    recipeImg.alt = meal.strMeal;
+
+    // 2. Clear previous ingredients
+    ingredientsList.innerHTML = '';
+
+    // 3. Loop through the 20 possible ingredients from TheMealDB
+    for (let i = 1; i <= 20; i++) {
+        const ingredient = meal[`strIngredient${i}`];
+        const measure = meal[`strMeasure${i}`];
+
+        if (ingredient && ingredient.trim() !== '') {
+            const li = document.createElement('li');
+            li.textContent = `${measure} - ${ingredient}`;
+            ingredientsList.appendChild(li);
+        }
+    }
+
+    // 4. Populate Instructions
+    instructionsText.textContent = meal.strInstructions;
+}
+
+// Modify the find button behavior to update the UI (appended to your existing click event or overwrite it)
+document.getElementById('find-meal-btn').addEventListener('click', () => {
+    if (window.currentFetchedMeal) {
+        displayMeal(window.currentFetchedMeal);
+    }
+});
