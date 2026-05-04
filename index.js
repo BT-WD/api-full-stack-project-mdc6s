@@ -3,7 +3,7 @@
 // Import Firebase SDK
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.11.1/firebase-app.js";
 
-// Your web app's Firebase configuration
+// Web app's Firebase configuration
 const firebaseConfig = {
     apiKey: "AIzaSyAhA4VKuvPV00KpmWM4qZzsds6if8mhoHs",
     authDomain: "recipefinder-2a094.firebaseapp.com",
@@ -94,16 +94,19 @@ async function fetchCategories() {
 // Initialize the dropdown on load
 fetchCategories();
 
-// Function to display fetched data
+// Function to display the meal data on screen with formatted instructions
 function displayMeal(meal) {
     if (!meal) return;
 
+    // 1. Update Title and Image
     recipeTitle.textContent = meal.strMeal;
     recipeImg.src = meal.strMealThumb;
     recipeImg.alt = meal.strMeal;
 
+    // 2. Clear previous ingredients
     ingredientsList.innerHTML = '';
 
+    // 3. Loop through the 20 possible ingredients from TheMealDB
     for (let i = 1; i <= 20; i++) {
         const ingredient = meal[`strIngredient${i}`];
         const measure = meal[`strMeasure${i}`];
@@ -115,10 +118,21 @@ function displayMeal(meal) {
         }
     }
 
-    instructionsText.textContent = meal.strInstructions;
+    // 4. Format Instructions and separate steps
+    let formattedInstructions = meal.strInstructions || '';
+    
+    if (formattedInstructions) {
+        // Regex to find "step X" and replace with formatted newlines and "Step X."
+        formattedInstructions = formattedInstructions
+            .replace(/step\s+(\d+)/gi, '\n\nStep $1. ')
+            .trim();
+    }
+
+    // Populate Instructions
+    instructionsText.textContent = formattedInstructions;
 }
 
-// Update the findMealBtn behavior to filter by Category first
+// Update the behavior to filter by Category first
 findMealBtn.addEventListener('click', async () => {
     const selectedCategory = mealCategory.value;
     try {

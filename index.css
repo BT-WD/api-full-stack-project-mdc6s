@@ -15,7 +15,7 @@ body {
     min-height: 100vh;
 }
 
-/* Modal Overlay - Makes it sit on top of everything */
+/* Modal Overlay */
 #login-modal {
     position: fixed;
     top: 0;
@@ -36,9 +36,9 @@ body {
     text-align: center;
 }
 
-/* Main Container - The side-by-side layout */
+/* Main Container  */
 .container {
-    display: flex; /* Sidebar and Main will sit side-by-side */
+    display: flex; 
     width: 100%;
     max-width: 1100px;
     background-color: white;
@@ -46,7 +46,7 @@ body {
     border: 1px solid #ddd;
 }
 
-/* Sidebar - Fixed width */
+/* Sidebar */
 aside {
     width: 300px;
     padding: 30px;
@@ -56,14 +56,14 @@ aside {
     gap: 25px;
 }
 
-/* Recipe Display - Fills the rest of the space */
+/* Recipe Display */
 main {
     flex: 1; 
     padding: 50px;
     overflow-y: auto;
 }
 
-/* Image Placeholder - to prevent layout jumping */
+/* Image Placeholder */
 #recipe-img {
     display: block;
     width: 100%;
@@ -171,7 +171,7 @@ select#meal-category {
     border-radius: 8px;
     border-left: 4px solid #ff914d;
     margin-top: 15px;
-    white-space: pre-wrap; /* Preserve line breaks */
+    white-space: pre-wrap;
     font-size: 0.95rem;
 }
 
